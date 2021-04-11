@@ -1,5 +1,3 @@
-#### made by michael trushkin
-
 ## Default setup for cpp projects
 * this repository holds, a default settings for cpp projects
 * Makefile that will compile everything and create an executable.
@@ -11,30 +9,32 @@
 ## Compilation 
 ### OBJ_PATH
 * set this to specify the target folder for .o files. 
-#### * ( default : obj folder )
+* #### ( default : obj folder )
 
 ### SRC_PATH
 * set this to specify the location of the .cpp files.
-#### * ( default : none )
+* #### ( default : none )
 
 ### HPP_PATH
 * set this to specify the location of the .h files.
-#### * ( default : none )
+* #### ( default : none )
 
 ### EXE_PATH
 * set this to specify the target location for the executable file
-#### * ( default : none )
+* #### ( default : none )
 
 
 
 ## EXECUTABLE
 ### EXE_PATH
 * set this to specify the target location for the executable file
-#### * ( default : none )
+* #### ( default : none )
 
 #### PROG_NAME
 * the name of the executable ( without ending )
-#### * ( default : pragma.exe )
+* #### ( default : pragma.exe )
 
 ####
 * set this to specify the "ending" for the executable file
+
+#### made by michael trushkin
