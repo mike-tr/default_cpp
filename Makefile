@@ -2,6 +2,10 @@
 
 # made by michael trushkin
 # this makefile compiles all cpp files and create an main object.
+# the files assume that everything is dependent so it might have bigger compile time.
+# but it easier then adding by hand.
+
+# note : this setup supports only 1 main file.
 
 CXX=clang++-9 
 CXXFLAGS=-std=c++2a -Werror -Wsign-conversion
@@ -17,13 +21,30 @@ SRC_PATH := src/
 OBJ_PATH := obj/
 HPP_PATH := src/hpp/
 
+# get all the .hpp files that are inside the HPP folder.
 HEADERS := $(wildcard $(HPP_PATH)*.hpp)
-SOURCES := $(wildcard $(SRC_PATH)*.cpp)
-OBJECTS := $(patsubst $(SRC_PATH)%.cpp, $(OBJ_PATH)%.o, $(SOURCES))
 
+# get all the .cpp files that are inside the SRC_PATH folder.
+SOURCES := $(wildcard $(SRC_PATH)*.cpp)
+
+# name of all .o files that needs to be created
+# how it works
+# assume SRC_PATH = "src/"
+# OBJ_PATH = "obj/"
+# SOURCES = src/f1.cpp src/f2.cpp
+# get from $(SOURCES) all the names.
+# find the sequence src/%.cpp in our case it would be f1, f2
+# add to % the format obj/%.o so we get
+# obj/f1.o obj/f2.o
+# now OBJECTS = obj/f1.o obj/f2.o
+# now we can use OBJECTS to compile all the needed files.
+OBJECTS := $(patsubst $(SRC_PATH)%.cpp, $(OBJ_PATH)%.o, $(SOURCES)) 
+
+#compile and run the exe
 run: $(EXE_PATH)$(PROG_NAME)
 	./$^
 
+#Compile all the .o files.
 all: $(OBJECTS)
 
 # Compline everything, and create an executable file
