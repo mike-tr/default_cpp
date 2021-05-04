@@ -34,4 +34,7 @@
 * the name of the executable ( without ending )
 > #### ( default : pragma.exe )
 
+#### credit:
+( https://stackoverflow.com/questions/40621451/makefile-automatically-compile-all-c-files-keeping-o-files-in-separate-folde )
+
 #### made by michael trushkin

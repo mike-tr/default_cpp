@@ -1,3 +1,5 @@
+# credit https://stackoverflow.com/questions/40621451/makefile-automatically-compile-all-c-files-keeping-o-files-in-separate-folde
+
 # made by michael trushkin
 # this makefile compiles all cpp files and create an main object.
 
