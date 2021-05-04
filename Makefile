@@ -11,15 +11,15 @@ PROG_NAME := pragma.exe
 # set the path of the executable file
 EXE_PATH := out/
 
-SRC_PATH := 
+SRC_PATH := src/
 OBJ_PATH := obj/
-HPP_PATH :=
+HPP_PATH := src/hpp/
 
 HEADERS := $(wildcard $(HPP_PATH)*.hpp)
 SOURCES := $(wildcard $(SRC_PATH)*.cpp)
 OBJECTS := $(patsubst $(SRC_PATH)%.cpp, $(OBJ_PATH)%.o, $(SOURCES))
 
-run: $(EXEPATH)$(PROG_NAME)$(EXE_END)
+run: $(EXE_PATH)$(PROG_NAME)
 	./$^
 
 all: $(OBJECTS)
